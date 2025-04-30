@@ -62,6 +62,10 @@ namespace Password_Manager // my master pass is hgsv123
                 Console.WriteLine("\n Choose an option:");
                 Console.WriteLine("[1] Add Account");
                 Console.WriteLine("[2] Show Accounts");
+                Console.WriteLine("[3] Search Accounts");
+                Console.WriteLine("[4] Edit Account");
+                Console.WriteLine("[5] Delete Account");
+                Console.WriteLine("[6] Change Master Password");
                 Console.WriteLine("[0] Exit");
 
                 string choice = Console.ReadLine();
@@ -74,6 +78,18 @@ namespace Password_Manager // my master pass is hgsv123
                     case "2":
                         manager.ListAccounts();
                         break;
+                    case "3":
+                        manager.SearchAccounts();
+                        break;
+                    case "4":
+                        manager.EditAccount();
+                        break;
+                    case "5":
+                        manager.DeleteAccount();
+                        break;
+                    case "6":
+                        manager.ChangeMasterPassword();
+                        break;
                     case "0":
                         Console.WriteLine("Goodbye!");
                         Thread.Sleep(500);
@@ -85,7 +101,7 @@ namespace Password_Manager // my master pass is hgsv123
             }
         }
 
-        static string ReadHidden()
+        public static string ReadHidden()
         {
             var pwd = string.Empty;
             ConsoleKey key;
